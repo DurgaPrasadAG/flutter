@@ -85,10 +85,10 @@ class GravitySimulation extends Simulation {
   final double _end;
 
   @override
-  double x(double time) => _x + _v * time + 0.5 * _a * time * time;
+  double x(double time) => _x + (_v * time) + (0.5 * _a * (time * time));
 
   @override
-  double dx(double time) => _v + time * _a;
+  double dx(double time) => _v + (time * _a);
 
   @override
   bool isDone(double time) => x(time).abs() >= _end;
